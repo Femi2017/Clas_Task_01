@@ -3,14 +3,18 @@ provider "aws" {
   region     = "eu-west-1"
 }
 
-resource "aws_instance" "Apache" {
-  ami           = "ami-0c5c15d56ae86fb8f"
+resource "aws_instance" "default" {
+  ami           = "ami-01e6a0b85de033c99"
   instance_type = "t2.micro"
-  
+  tags = {
+  Name = "apache"
+ }
 }
 
-resource "aws_instance" "Nginx" {
-  ami           = "ami-0c5c15d56ae86fb8f"
+resource "aws_instance" "default2" {
+  ami           = "ami-01e6a0b85de033c99"
   instance_type = "t2.micro"
-	
+  tags  = {
+  Name = "nginx"
+  }
 }
